@@ -31,10 +31,14 @@ function filter_log {
 function run_server {
         # Obviously runs the starbound server
 
+        echo "$(date +"$TIME") Now starting Starbound..." >> "$LOG_FILE"
+
         cd "$SERVER_PATH/$ARCH"
         LD_LIBRARY_PATH=./ ./starbound_server | \
         while read LINE; do filter_log $LINE; done
 
+        echo "$(date +"$TIME") Starbound has stopped!" >> "$LOG_FILE"
+        echo "------------------------------" >> "$LOG_FILE"
         return "1" # simple hack, so the until loop will run...
 }
 
@@ -42,18 +46,16 @@ function wrapper {
         # Run server and try restart it again if it stops
 
         until $(run_server); do
-                TMP=$(date +"$TIME")
-                echo "$TMP Starbound has stopped!" >> "$CRASH_LOG"
-
                 # Test if the server should stop for good
                 if [ -f "$SERVER_PATH/stop" ]; then
                         rm "$SERVER_PATH/stop"
                         exit 0
                 fi
 
-                # Let things settle down a bit before restarting
-                echo "$TMP Restarting Starbound in $TIMEOUT seconds." \
+                echo "$(date +"$TIME") Starbound stopped, restarting in $TIMEOUT seconds." \
                 >> "$CRASH_LOG"
+
+                # Let things settle down a bit before restarting
                 sleep $TIMEOUT
         done
 }
