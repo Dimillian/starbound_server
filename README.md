@@ -6,6 +6,6 @@ Tools
 =====
 start_server.sh - A helpful tool to start a Starbound server.
 
-License
+Credits
 =======
-MIT License, see the file LICENSE.
+A. Svensson
