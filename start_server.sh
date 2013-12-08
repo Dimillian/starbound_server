@@ -2,6 +2,11 @@
 # This is a helpful tool to start a Starbound server. It will daemonize,
 # clean up the server's output, send output to a log file and try to restart
 # the server if it shuts down.
+#
+# LICENSE
+# MIT License, see the file:
+# https://github.com/lmas/starbound_server/blob/master/LICENSE
+################################################################################
 
 TIME="%Y-%m-%d_%H:%M:%S"
 TIMEOUT=60
