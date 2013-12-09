@@ -10,9 +10,10 @@ update.txt - once you have installed SteamCMD on your server you can run this sc
 
 Don't forget to set your steam login, password and the desired directory to install starbound
 
-To run it ./steamcmd.sh +runscript update.txt 
+To run it `./steamcmd.sh +runscript update.txt`
 
 Credits
 =======
 A. Svensson
+
 Dimillian
