@@ -11,7 +11,7 @@
 TIME="%Y-%m-%d_%H:%M:%S"
 TIMEOUT=60
 
-SERVER_PATH="/home/lmas/starbound"
+SERVER_PATH="/starbound"
 ARCH="linux64"
 LOG_FILE="$SERVER_PATH/server.log"
 CRASH_LOG="$SERVER_PATH/crash.log"
