@@ -14,3 +14,4 @@ To run it ./steamcmd.sh +runscript update.txt
 Credits
 =======
 A. Svensson
+Dimillian
